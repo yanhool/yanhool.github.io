@@ -203,8 +203,6 @@
       
         The article has been encrypted, please enter your password to view.<br>
         
-          <a class="article-more-a" href="/2020/10/22/%E8%BD%AC%E8%BD%BD-%E4%BB%8B%E8%AF%8D/#more">more >></a>
-        
       
 
       
@@ -257,49 +255,28 @@
 
 
   
-    <article id="post-顺序表编程题01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-英语笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/">顺序表编程题01</a>
+      <a class="article-title" href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/">英语笔记</a>
     </h1>
   
 
         
-        <a href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/" class="archive-article-date">
-  	<time datetime="2020-10-21T12:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
+        <a href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-10-21T09:16:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<p>1.对长度为n的顺序表L，编写时间复杂度为O(n)、空间复杂度为O(1)的算法，该算法删除表中所有元素x。</p>
-<blockquote>
-<p>该算法思想和简单选择排序类似，把列表分为非x列表和未分类的列表，把非x的元素都移动到非x列表，最后再把总列表的长度改为非x的列表即可。</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delet</span><span class="params">(SeqList &amp;l, ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;<span class="comment">//非x的个数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l.data[i] != x)&#123;</span><br><span class="line">            l.data[k] = l.data[i];</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    l.length = k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.删除有序顺序表中所有重复的元素</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delet</span><span class="params">(SeqList &amp;l)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l.data[i] != l.data[i + <span class="number">1</span>])&#123;</span><br><span class="line">            l.data[k] = l.data[i];</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    l.length = k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3.把两个有序顺序表表合并成一个新的有序表</p>
-<blockquote>
-<p>思路：两个顺序表逐项对比</p>
-<p>这段代码没有考虑当两个顺序表长度之和大于了MaxSize的情况</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(SeqList &amp;l1, SeqList &amp;l2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = <span class="number">0</span>;</span><br><span class="line">    SeqList c;</span><br><span class="line">    c.length = l1.length + l2.length;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; l1.length &amp;&amp; j &lt; l2.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l1.data[i] &lt;= l2.data[j])&#123;</span><br><span class="line">            c.data[k] = l1.data[i];</span><br><span class="line">            i++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            c.data[k] = l2.data[j];</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(l1.length != l2.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l1.length &gt; l2.length)</span><br><span class="line">            <span class="keyword">while</span>(i &lt; l1.length)&#123;</span><br><span class="line">                c.data[k] = l1.data[i]; </span><br><span class="line">                i++;</span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">while</span>(j &lt; l2.length)&#123;</span><br><span class="line">                 c.data[k] = l2.data[j];</span><br><span class="line">                 j++;</span><br><span class="line">                 k++;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4.A[m + n]中一次存放(a1 ,a2 , …, am)和(b1 ,b2 , …, bn),实现将(b1 ,b2 , …, bn)放置在(a1 ,a2 , …, am)前面</p>
-<p><img src="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/1.png"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(SeqList &amp;l, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">    ElemType temp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = low; i &lt;= (low + high) / <span class="number">2</span>; i++)&#123;</span><br><span class="line">        temp = l.data[i];</span><br><span class="line">        l.data[i] = l.data[high - (i - low)];</span><br><span class="line">        l.data[high - (i - low)] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(SeqList &amp;l, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    reverse(l, <span class="number">0</span>, l.length - <span class="number">1</span>);</span><br><span class="line">    reverse(l, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    reverse(l, n, l.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        The article has been encrypted, please enter your password to view.<br>
+        
       
 
       
@@ -312,7 +289,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
         		</li>
       		
 		</ul>
@@ -322,7 +299,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
@@ -352,19 +329,19 @@
 
 
   
-    <article id="post-英语笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-顺序表编程题01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/">英语笔记</a>
+      <a class="article-title" href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/">顺序表编程题</a>
     </h1>
   
 
         
-        <a href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <a href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/" class="archive-article-date">
   	<time datetime="2020-10-21T09:16:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
 </a>
         
@@ -372,9 +349,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        The article has been encrypted, please enter your password to view.<br>
-        
-          <a class="article-more-a" href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/#more">more >></a>
+        <p>1.对长度为n的顺序表L，编写时间复杂度为O(n)、空间复杂度为O(1)的算法，该算法删除表中所有元素x。</p>
         
       
 
@@ -388,7 +363,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
         		</li>
       		
 		</ul>
@@ -398,7 +373,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/">展开全文 >></a>
         </p>
       
 
