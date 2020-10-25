@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yanhool.github.io">
-  <title>(转载)介词 | yanhool的小站</title>
+  <title>链表编程题 | yanhool的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
   <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
@@ -23,17 +23,17 @@
         border-left-color: #6d6d6d;    /*左边框颜色*/
     }
   </style>
-  <meta name="description" content="The article has been encrypted, please enter your password to view.">
+  <meta name="description" content="删除不带头结点链表中所有值为x的元素 1234567891011121314&#x2F;&#x2F;递归的方式void deleX(LinkList &amp;l, ElemType x)&amp;#123;    if(l &#x3D;&#x3D; NULL)&amp;#123;        return;    &amp;#125;    if(l-&gt;data &#x3D;&#x3D; x)&amp;#123;        LNode *p &#x3D; l;      &#x2F;&#x2F;设置了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(转载)介词">
-<meta property="og:url" content="http://yanhool.github.io/2020/10/22/%E8%BD%AC%E8%BD%BD-%E4%BB%8B%E8%AF%8D/index.html">
+<meta property="og:title" content="链表编程题">
+<meta property="og:url" content="http://yanhool.github.io/2020/10/25/%E9%93%BE%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%98/index.html">
 <meta property="og:site_name" content="yanhool的小站">
-<meta property="og:description" content="The article has been encrypted, please enter your password to view.">
+<meta property="og:description" content="删除不带头结点链表中所有值为x的元素 1234567891011121314&#x2F;&#x2F;递归的方式void deleX(LinkList &amp;l, ElemType x)&amp;#123;    if(l &#x3D;&#x3D; NULL)&amp;#123;        return;    &amp;#125;    if(l-&gt;data &#x3D;&#x3D; x)&amp;#123;        LNode *p &#x3D; l;      &#x2F;&#x2F;设置了">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-22T07:51:24.000Z">
-<meta property="article:modified_time" content="2020-10-22T07:52:37.363Z">
+<meta property="article:published_time" content="2020-10-25T10:22:26.000Z">
+<meta property="article:modified_time" content="2020-10-25T10:34:26.343Z">
 <meta property="article:author" content="yanhool">
-<meta property="article:tag" content="英语">
+<meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="yanhool的小站" type="application/atom+xml">
@@ -182,40 +182,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-转载-介词" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-链表编程题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      (转载)介词
+      链表编程题
     </h1>
   
 
         
-        <a href="/2020/10/22/%E8%BD%AC%E8%BD%BD-%E4%BB%8B%E8%AF%8D/" class="archive-article-date">
-  	<time datetime="2020-10-22T07:51:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-22</time>
+        <a href="/2020/10/25/%E9%93%BE%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-10-25T10:22:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read the blog." />
-    <label for="pass">Please enter the password to read the blog.</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-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
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <hr>
+<p>删除不带头结点链表中所有值为x的元素</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//递归的方式</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleX</span><span class="params">(LinkList &amp;l, ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(l-&gt;data == x)&#123;</span><br><span class="line">        LNode *p = l;      <span class="comment">//设置了一个临时结点用于存放要free的结点</span></span><br><span class="line">        l = l-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(p);</span><br><span class="line">        deleX(l, x);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        deleX(l-&gt;next, x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -228,7 +219,7 @@ U2FsdGVkX1/B0fCrM40WAJyQe+98Ei3EeUo/I1gjoWvuKm7a/4G93rvZLsbF28N/hkRNNGxsm/7F0jRa
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
         		</li>
       		
 		</ul>
@@ -247,18 +238,9 @@ U2FsdGVkX1/B0fCrM40WAJyQe+98Ei3EeUo/I1gjoWvuKm7a/4G93rvZLsbF28N/hkRNNGxsm/7F0jRa
   
 <nav id="article-nav">
   
-    <a href="/2020/10/25/%E9%93%BE%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          链表编程题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/21/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">英语笔记</div>
+    <a href="/2020/10/22/%E8%BD%AC%E8%BD%BD-%E4%BB%8B%E8%AF%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">(转载)介词</div>
       <i class="icon-circle-right"></i>
     </a>
   
