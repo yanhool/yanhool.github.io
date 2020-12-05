@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="yanhool的小站">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-25T10:22:26.000Z">
-<meta property="article:modified_time" content="2020-11-09T11:40:51.231Z">
+<meta property="article:modified_time" content="2020-11-25T11:08:38.176Z">
 <meta property="article:author" content="yanhool">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
@@ -222,6 +222,8 @@
 <p><strong>已知有一个单向循环链表，其每个结点中含三个域：pre，data和next，其中data为数据域，next为指向后继结点的指针域，pre也为指针域，但它的值为空(NULL)，试编写算法将此单向循环链表改为双向循环链表，即使pre称为指向前驱结点的指针域。</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">listToDu</span><span class="params">(DuLinkList &amp;L)</span></span>&#123;</span><br><span class="line">    DuLinkList p;</span><br><span class="line">    p = L;</span><br><span class="line">    <span class="keyword">if</span>(!L) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next != L)&#123;</span><br><span class="line">        p-&gt;next-&gt;pre = p;</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;pre = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<hr>
+<hr>
 
       
 

@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yanhool.github.io">
-  <title>Archives: 2020 | yanhool的小站</title>
+  <title>苏大DS真题 | yanhool的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
   <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
@@ -23,14 +23,15 @@
         border-left-color: #6d6d6d;    /*左边框颜色*/
     }
   </style>
-  <meta name="description" content="昨夜西风凋碧树，独上高楼望尽天涯路。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yanhool的小站">
-<meta property="og:url" content="http://yanhool.github.io/archives/2020/page/2/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="苏大DS真题">
+<meta property="og:url" content="http://yanhool.github.io/2020/11/25/%E8%8B%8F%E5%A4%A7DS%E7%9C%9F%E9%A2%98/index.html">
 <meta property="og:site_name" content="yanhool的小站">
-<meta property="og:description" content="昨夜西风凋碧树，独上高楼望尽天涯路。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-25T11:32:26.000Z">
+<meta property="article:modified_time" content="2020-11-30T12:55:44.768Z">
 <meta property="article:author" content="yanhool">
+<meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="yanhool的小站" type="application/atom+xml">
@@ -179,36 +180,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-苏大DS真题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/" class="archive-article-date">
-  	<time datetime="2020-10-21T09:16:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/21/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%BC%96%E7%A8%8B%E9%A2%9801/">顺序表编程题</a>
+    <h1 class="article-title" itemprop="name">
+      苏大DS真题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/11/25/%E8%8B%8F%E5%A4%A7DS%E7%9C%9F%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-11-25T11:32:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+
+<p><strong>给定一个值，求出所有得到的新值的个数。例如给出值为 345，将其各位数字相加得到新值为 12，对 12 各位相加得到新值为 3，则对 345 得到的新值的个数为 3 个（包括其本身）。</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">nextnum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">       sum += n % <span class="number">10</span>;</span><br><span class="line">       n /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> c = <span class="number">1</span>;			<span class="comment">//n本身算一个</span></span><br><span class="line">    <span class="keyword">while</span>(n / <span class="number">10</span> != <span class="number">0</span>)&#123; <span class="comment">//n为个位数是跳出循环</span></span><br><span class="line">        n = nextnum(n);</span><br><span class="line">        c++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c);</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>将数的质因数分解并按递减顺序写成一个有序单链表。如：2100-&gt;7.5.5.3.2.2</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">breakNum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    Stack S;</span><br><span class="line">    InitStack(S);</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(n &gt; <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % temp == <span class="number">0</span>) temp++;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            Push(S, temp);</span><br><span class="line">            n /= temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   	<span class="comment">//输出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d-&gt;&quot;</span>, n);</span><br><span class="line">    <span class="keyword">while</span>(isEmpty(S))&#123;</span><br><span class="line">        Pop(S, temp);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d.&quot;</span>, temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">breakNum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    Stack S;</span><br><span class="line">    InitStack(S);</span><br><span class="line">    LinkList L = <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(n &gt; <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % temp == <span class="number">0</span>) temp++;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            Push(S, temp);</span><br><span class="line">            n /= temp;</span><br><span class="line">            p = (LNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">            p-&gt;data = temp;</span><br><span class="line">            p-&gt;next = L;</span><br><span class="line">            L = p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>二叉链的二叉树，递归，验证是否严格二叉。（无度为 1 的结点）</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isBiTree</span><span class="params">(BiTree T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//空树是二叉树</span></span><br><span class="line">    <span class="keyword">if</span>(T-&gt;lchild == <span class="literal">NULL</span> &amp;&amp; T-&gt;rchild == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(T-&gt;lchild == <span class="literal">NULL</span> &amp;&amp; T-&gt;rchild != <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(T-&gt;lchild != <span class="literal">NULL</span> &amp;&amp; T-&gt;rchild == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> (isBiTree(T-&gt;lchild) &amp;&amp; isBiTree(T-&gt;rchild))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>**一棵由字符元素构成的二叉树以完全二叉树的数组结构进行存储。设计创建该二叉树的二 .叉链表结构的递归算法。 **</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BiTree <span class="title">create</span><span class="params">(<span class="keyword">char</span>[] T. <span class="keyword">int</span> i, <span class="keyword">int</span> length)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &gt; length || i &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;	<span class="comment">//T[0]不存值</span></span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        BiTree T2 = (BiTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTree));</span><br><span class="line">        T2-&gt;data = T[i];</span><br><span class="line">        T2-&gt;lchild = create(T, <span class="number">2</span>*i, length);</span><br><span class="line">        T2-&gt;rchild = create(T, <span class="number">2</span>*i + <span class="number">1</span>, length);</span><br><span class="line">        <span class="keyword">return</span> T2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>**一个由整数元素构成的递增有序线性表存放在一个双向链表中，设计一个时间复杂度为 O(n)的算法，在链表中获得两个和为x的结点的值，并以x=a+b的形式输出；若不存在，则给出提示信息 **</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findAB</span><span class="params">(LinkList L, <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;此链表为空！\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    LNode *p1, *p2;</span><br><span class="line">    p1 = L;</span><br><span class="line">    p2 = L;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    <span class="keyword">while</span>(p2-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">        p2 = p2-&gt;next;</span><br><span class="line">    <span class="comment">//p2指向链尾</span></span><br><span class="line">    <span class="keyword">while</span>(p1 != p2)&#123;</span><br><span class="line">        temp = p1-&gt;data + p2-&gt;data;</span><br><span class="line">        <span class="keyword">if</span>(temp == x)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d=%d+%d\n&quot;</span>, x, p1-&gt;data, p2-&gt;data);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(temp &gt; x) p2 = p2-&gt;prior;</span><br><span class="line">        <span class="keyword">else</span> p1 = p1-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p1 == p2) <span class="built_in">printf</span>(<span class="string">&quot;不存在!\n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>设L1和L2是两个存放整型元素的递增有序顺序表，设计时间性能和空间性能尽量高效的算法，查找出L1和L2中所有元素按大小排列的中间值</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mid</span><span class="params">(SeqList &amp;l1, SeqList &amp;l2, <span class="keyword">int</span> length1, <span class="keyword">int</span> length2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> mid = (length1 + lenhth2) / <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> m, p1 = <span class="number">0</span>, p2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(length1 == <span class="number">0</span> &amp;&amp; length2 == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(length1 == <span class="number">0</span>) m = l2.data[mid];</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(length2 == <span class="number">0</span>) m = l1.data[mid];</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; mid)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1.data[p1] &lt; l2.data[p2])&#123;</span><br><span class="line">                m = l1.data[p1];</span><br><span class="line">                p1++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               	m = l2.data[p2];</span><br><span class="line">                p2++; </span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>己知带头结点的单链表A，要求设计算法生成一个新的链表B,使得B中含有 A中的元素，且次序不变，但不包含A中的重复元素。如A中的元素为（1,7, 7, 3, 5, 3,1）,则B中的元素依次为（1, 7, 3, 5）</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//次序不变：尾插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">linkB</span><span class="params">(LinkList &amp;A)</span></span>&#123;</span><br><span class="line">    LNode *p = <span class="literal">NULL</span>, </span><br><span class="line">    *q = <span class="literal">NULL</span>, </span><br><span class="line">    *r = <span class="literal">NULL</span>;		<span class="comment">//p指向A， q指向B, r指向q前一个指针</span></span><br><span class="line">    LinkList B = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">    B-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    </span><br><span class="line">    p = A-&gt;next;</span><br><span class="line">    <span class="keyword">if</span>(A-&gt;next == <span class="literal">NULL</span> || A == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span>(p != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        r = B;</span><br><span class="line">        q = B-&gt;next;</span><br><span class="line">        LNode *s = (LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">        s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">        s-&gt;data = p-&gt;data;</span><br><span class="line">        <span class="keyword">while</span>(q != <span class="literal">NULL</span>)&#123;			<span class="comment">//在每插入一个节点前，遍历比较B看是否有相同的值</span></span><br><span class="line">            <span class="keyword">if</span>(q-&gt;data == s-&gt;data)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            q = q-&gt;next;</span><br><span class="line">            r = r-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(q == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            q = s;</span><br><span class="line">        &#125;</span><br><span class="line">        r-&gt;next = q;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>数组A中有n个整数，其中可能存在负数。设计算法找出数组A中连续n （n&gt;1） 个元素之和的最小值。如果A中全部都是正数，则此最小值为0。分析算法的时间复杂度。 例：设A中元素依次为｛10, 20, -10, 8, -30, 20｝， 则连续n个数的片段有很多不同的组 合，其中元素之和有最小值的片段为n=3时｛-10, 8、-30｝这个片段，其和为-10+8+（-30)=-32。</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getValue</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>**设计递归算法，求出包含n个结点的不同形态的二叉树的数目k。如：3个结 点的二叉树共有5种不同形态，即n=3吋k=5。 **</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>一个线性表元素均为正整数，带头结点的单链表，判断是否偶数在前面奇数在后面</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isOrder</span><span class="params">(LinkList L)</span></span>&#123;</span><br><span class="line">    LNode *p = <span class="literal">NULL</span>;</span><br><span class="line">    p = L-&gt;next;</span><br><span class="line">    <span class="keyword">if</span>(L == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span>(p != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;data % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(p != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;data % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>二叉树有data、lchild、rchild和为赋值的size记录其结点子树上的结点总数，现给size赋值</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">nodeNum</span><span class="params">(BiTree T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + nodeNum(T-&gt;lchild) + nodeNum(T-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createSize</span><span class="params">(BiTree &amp;T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    T-&gt;size = nodeNum(T-&gt;lchild) + nodeNum(T-&gt;rchild);</span><br><span class="line">    createSize(T-&gt;lchild);</span><br><span class="line">    createSize(T-&gt;rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>孩子兄弟表示法，求树中度为k的结点个数</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">CSNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CSNode</span> *<span class="title">firstchild</span>, *<span class="title">nextsibling</span></span></span><br><span class="line"><span class="class">&#125;<span class="title">CSNode</span>, *<span class="title">CSTree</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">degreeK</span><span class="params">(CSTree T, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    CSNode *p = T-&gt;firstchild;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p)&#123;</span><br><span class="line">        p = p-&gt;nextsibling;</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(num == k)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(CSTree T, <span class="keyword">int</span> k, <span class="keyword">int</span> &amp;num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(degreeK(T, k)) num++;</span><br><span class="line">    test(T-&gt;lchild, k, num);</span><br><span class="line">    test(T-&gt;rchild, k, num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -220,43 +269,54 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/19/win%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="archive-article-date">
-  	<time datetime="2020-10-19T14:02:16.619Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-19</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9%E5%88%A4%E6%96%AD%E9%A2%98%E7%BB%83%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作系统选择判断题练习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -280,8 +340,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
